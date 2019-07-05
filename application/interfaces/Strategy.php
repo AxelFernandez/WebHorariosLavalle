@@ -11,4 +11,6 @@ interface Strategy
     public function getToMendoza();
     public function getFromMendoza();
     public function knowDestiny($row,$toOrFrom);
+    public function getTableName();
+    public function getPlataform();
 }

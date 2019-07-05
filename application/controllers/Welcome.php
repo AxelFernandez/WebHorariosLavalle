@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
         $this->load->model('R24_model');
-        $this->R24_model->getToMendoza();
+        echo ($this->R24_model->getToMendoza());
 		//$this->load->view('Demo.html');
 	}
 }
