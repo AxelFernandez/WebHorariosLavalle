@@ -83,3 +83,49 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*
+ *
+ * This Constants is for the common use in application
+ *
+ */
+define('WEEK', 'week');
+define('SATURDAY', 'saturday');
+define('SUNDAY', 'sunday');
+define('ROUTE', 'route');
+define('FROM', 'from');
+define('TO', 'to');
+define('ARRIVAL_HOUR', 'arrivalHour');
+define('FINISH_HOUR', 'finishHour');
+define('PLATFORM', 'platform');
+define('ROW_NAME', 'rowName');
+define('DESCRIPTION', 'desc');
+define('IDA','ida');
+define('VUELTA','vuelta');
+define('LIMIT', 4);
+/*
+ * Places to Search
+ *
+ */
+define ("R24DistToMendoza", serialize (array ("asuncion", "el15", "gustavoAndre","costaDeAraujo","lavalle","mendoza")));
+define ("R24MendozaToDist", serialize (array ("mendoza", "lavalle", "costaDeAraujo","gustavoAndre","el15","asuncion")));
+
+
+define ("R40DistToMendoza", serialize (array ("km56", "km47Esc", "jocoli","oscarMendoza","andacollo","croco","sguazini","3DeMayo","sanFrancisco","calleItalia",
+    "barrioLaColmena","salvatierra","paramillo","lavalle","verjel","cruce","pastal","borbollon","mendoza")));
+define ("R40MendozaToDist", serialize (array ("mendoza", "borbollon", "pastal","cruce","lavalle", "paramillo", "verjel","salvatierra","barrioLaColmena",
+    "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56")));
+
+/*
+ *  Description for Place
+ *
+ */
+
+//R24
+define('asuncion', 'Asuncion');
+define('el15', 'El 15');
+define('gustavoAndre', 'Gustavo Andre');
+define('costaDeAraujo', 'Costa de Araujo');
+define('lavalle', 'Lavalle');
+define('mendoza', 'Mendoza');
+

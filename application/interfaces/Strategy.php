@@ -8,9 +8,10 @@
 
 interface Strategy
 {
-    public function getToMendoza();
-    public function getFromMendoza();
-    public function knowDestiny($row,$toOrFrom);
-    public function getTableName();
+    public function getToMendoza($day);
+    public function getFromMendoza($day);
+    public function searchDisttrictToMendoza($row);
+    public function searchMendozaToDistrict($row);
     public function getPlataform();
+    public function getLastArrival($day,$fromTo);
 }

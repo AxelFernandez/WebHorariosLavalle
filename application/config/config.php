@@ -523,3 +523,32 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+//R24
+$config['asuncion'] = 'Asuncion';
+$config['el15'] = 'El 15';
+$config['gustavoAndre'] = 'Gustavo Andre';
+$config['costaDeAraujo'] = 'Costa de Araujo';
+$config['lavalle'] = 'Lavalle';
+$config['mendoza'] = 'Mendoza';
+
+//R40
+  $config['mendoza']=  'Mendoza';
+  $config['borbollon']=  'Borbollon';
+  $config['pastal']=  'Pastal';
+  $config['cruce']=  'Cruce';
+  $config['lavalle']=  'Lavalle';
+  $config['paramillo']=  'Paramillo';
+  $config['verjel']=  'El Verjel';
+  $config['salvatierra']=  'Salvatierra';
+  $config['barrioLaColmena']=  'Barrio La Colmena';
+  $config['calleItalia']=  'Calle Italia';
+  $config['sanFrancisco']=  'San Francisco';
+  $config['3DeMayo']=  '3 De Mayo';
+  $config['sguazini']=  'Sguazini';
+  $config['croco']=  'Croco';
+  $config['andacollo']=  'Andacollo';
+  $config['oscarMendoza']=  'Oscar Mendoza';
+  $config['jocoli']=  'Jocoli';
+  $config['km47Esc']=  'Km47 Esc';
+  $config['km56']=  'Km 56';
