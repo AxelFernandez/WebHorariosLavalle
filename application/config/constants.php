@@ -102,7 +102,9 @@ define('ROW_NAME', 'rowName');
 define('DESCRIPTION', 'desc');
 define('IDA','ida');
 define('VUELTA','vuelta');
-define('LIMIT', 4);
+define('NAME','name');
+define('PHONE','phone');
+define('LIMIT', 5);
 /*
  * Places to Search
  *

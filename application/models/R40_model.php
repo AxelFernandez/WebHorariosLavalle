@@ -23,7 +23,7 @@ class R40_model extends CI_Model implements Strategy
             $hour[TO] = $destiny[DESCRIPTION];
             $hour[ARRIVAL_HOUR] = $row->lavalle;
             $hour[FINISH_HOUR] = $row->$destiny[ROW_NAME];
-            $hour[PLATFORM] = self::getPlataform();
+            $hour[PLATFORM] = self::getPlataform(IDA);
             $result[] = $hour;
         }
         return $result;
@@ -43,7 +43,7 @@ class R40_model extends CI_Model implements Strategy
             $hour[TO] = $destiny[DESCRIPTION];
             $hour[ARRIVAL_HOUR] = $row->lavalle;
             $hour[FINISH_HOUR] = $row->$destiny[ROW_NAME];
-            $hour[PLATFORM] = self::getPlataform();
+            $hour[PLATFORM] = self::getPlataform(VUELTA);
             $result[] = $hour;
         }
         return $result;
@@ -62,9 +62,9 @@ class R40_model extends CI_Model implements Strategy
         return $result;
     }
 
-    public function getPlataform()
+    public function getPlataform($routine)
     {
-       return "Plataforma 1";
+        return $routine == IDA ? "Plataforma 3" : "Plataforma 4";
     }
 
     public function searchMendozaToDistrict($row)

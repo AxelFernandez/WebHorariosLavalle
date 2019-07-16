@@ -12,6 +12,6 @@ interface Strategy
     public function getFromMendoza($day);
     public function searchDisttrictToMendoza($row);
     public function searchMendozaToDistrict($row);
-    public function getPlataform();
+    public function getPlataform($routine);
     public function getLastArrival($day,$fromTo);
 }

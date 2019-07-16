@@ -1,49 +1,43 @@
 <!doctype html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Horarios Lavalle Web</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>js/JsView.js" ></script>
+    <head>
+        <meta charset="utf-8">
+        <title>Horarios Lavalle Web</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>js/JsView.js" ></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbar-static/">
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbar-static/">
+    </head>
+    <body onload="startTime(), callhour(),callTaxi()">
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-
-    <!-- Custom styles for this template -->
-</head>
-<body onload="startTime(), callhour()">
-<div class="navbar navbar-expand-md navbar-dark bg-dark mb-4 justify-content-center">
-    <div >
-        <h1 class="navbar-brand">Hora Actual:</h1>
-    </div>
-    <div id="clockdate">
-        <h1 class="navbar-brand"><div id="clock"></div></h1>
-    </div>
-
-</div>
-<div style="margin-left: 30px;margin-right: 30px">
-
-    <div style="margin-top: 120px;width:40%;float:left">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG&autoplay=1" frameborder=”0″ allowfullscreen></iframe>
-    </div>
-    <div style="width: 60%; float: right">
-        <div id="hours">
-
+        <nav class="site-header sticky-top py-1">
+            <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4 justify-content-between">
+                <div style="float: left">
+                    <img style="margin-left: 30%; margin-top: 5%" width="200" height="150" src="<?php echo base_url();?>Img/Logo.jpg">
+                </div>
+                <div style="margin-right: 10%" id="clockdate">
+                    <h1 class="navbar-brand">Hora Actual:</h1>
+                    <h1 style="size: 49px;color: white" ><div id="clock"></div></h1>
+                </div>
+            </div>
+        </nav>
+        <div style="margin-left: 5%;margin-right: 5%">
+            <div class="row">
+                <div class="col" style="margin-top: 5%">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG&autoplay=1&loop=1&controls=0" frameborder=”0″ allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="boxes">
+                        <div class="box" id="taxi"></div>
+                        <div class="box" id="hours"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
-
-
-</div>
-
-
-</body>
-</html>
+    </body>
+    </html>

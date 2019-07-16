@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->model('Formater_model','table');
         $this->load->model('R24_model','R24');
+        $this->load->model('Taxi_model','taxi');
         $this->load->model('R40_model','R40');
         $this->load->model('Daytouse_model','day');
         $this->load->helper('url');
@@ -60,5 +61,16 @@ class Welcome extends CI_Controller {
         echo $result = $this->getNextArrival(). $this->getLastArrival();
 
 
+    }
+    public function getAjaxTaxi(){
+        echo $this->getListtaxi();
+    }
+    public function getListtaxi(){
+        $result =$this->table->formaterHeadTaxi();
+        $taxi = $this->taxi->getTaxi();
+        foreach ($taxi as $item) {
+            $result .= $this->table->formaterRowTaxi($item);
+        }
+       return $result;
     }
 }

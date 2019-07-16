@@ -36,8 +36,8 @@ class Formater_model extends CI_Model
         $rowcolor = self::$rowcolorblue;
         $result .= '<tbody>
         <tr class='.$rowcolor.'>
-            <td>'.$hour[ROUTE].'</td>
-            <td>'.$hour[FROM].'</td>
+            <th scope="row">'.$hour[ROUTE].'</th>
+            <th scope="row">'.$hour[FROM].'</th>
             <td>'.$hour[ARRIVAL_HOUR].'</td>
             <td>'.$hour[TO].'</td>
             <td>'.$hour[FINISH_HOUR].'</td>
@@ -71,8 +71,8 @@ class Formater_model extends CI_Model
         $rowcolor = self::$rowcolorRed;
         $result .= '<tbody>
         <tr class='.$rowcolor.'>
-            <td>'.$hour[ROUTE].'</td>
-            <td>'.$hour[FROM].'</td>
+            <th scope="row">'.$hour[ROUTE].'</th>
+            <th scope="row">'.$hour[FROM].'</th>
             <td>'.$hour[TO].'</td>
             <td>'.$hour[ARRIVAL_HOUR].'</td>
         </tr>';
@@ -81,4 +81,33 @@ class Formater_model extends CI_Model
         return $result;
 
     }
+
+    public function formaterHeadTaxi(){
+        $result =  '
+            <table class="table table-striped">
+            <h3 align="center">Taxi</h3>
+            <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+            </tr>
+            </thead>';
+        return $result;
+
+
+    }
+    public function formaterRowTaxi($taxi){
+        $result = null;
+        $rowcolor = self::$rowcolorYellow;
+        $result .= '<tbody>
+        <tr class='.$rowcolor.'>
+            <td>'.$taxi[NAME].'</td>
+            <td>'.$taxi[PHONE].'</td>
+        </tr>';
+
+
+        return $result;
+
+    }
+
 }
