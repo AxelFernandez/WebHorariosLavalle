@@ -17,7 +17,6 @@ class Login extends CI_Controller {
 
     public function index()
     {
-        $data = array();
         $this->load->view('Login.html');
     }
     public function logIn_post(){
@@ -50,9 +49,7 @@ class Login extends CI_Controller {
         }
     }
     public function logOut() {
-        $usuario_data = array(
-            'login' => FALSE
-        );
+
         $this->session->sess_destroy();
         redirect('login/index');
     }

@@ -17,18 +17,22 @@ class User_model extends CI_Model
         $result = $query->row();
         return $result;
     }
-    public function cambiarcontraseña($user, $pass, $newpass){
-        $this->db->select('*');
-        $this->db->from('user');
-        $this->db->where('user', $user);
-        $this->db->where('password', $pass);
-        $consulta = $this->db->get();
-        foreach ($consulta->result_array() as $datarow){
-            if ($datarow['password']==$pass){
-                $this->db->query("Update usuario set contraseña='".$newpass."' where idusuario='".$datarow['idusuario']."';");
-                return true;
-            }
-            else{return false;}
-        }
+
+    public function showUsers(){
+        $this->load->library('grocery_CRUD');
+        $crud = new grocery_CRUD();
+        $crud->set_table('user');
+        $crud->columns('user');
+        $crud->display_as('iduser','ID');
+        $crud->display_as('user','Nombre');
+        $crud->change_field_type('password','password');
+        $crud->set_language("Spanish");
+        $crud->unset_clone();
+        $crud->unset_export();
+        $crud->unset_read();
+        $crud->unset_print();
+        $output = $crud->render();
+        return $output;
     }
+
 }

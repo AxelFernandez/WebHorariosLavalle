@@ -16,6 +16,7 @@ class Backend extends CI_Controller
         $this->load->library('session');
         $this->load->library('grocery_CRUD');
         $this->load->model('Taxi_model','taxi');
+        $this->load->model('User_model','users');
 
     }
     public function index(){
@@ -26,11 +27,18 @@ class Backend extends CI_Controller
             $output = $this->taxi->managementTaxi();
             $this->load->view('backend', $output);
 
-        }else{echo 'dont loged yet!';}
+        }else{redirect('login/index');}
 
     }
-    public function horarios(){
+    public function user(){
+        if ($this->session->userdata('login')) {
+            $output = $this->users->showUsers();
+            $this->load->view('backend', $output);
 
+        }else{redirect('login/index');}
 
+    }
+    public function logout(){
+        redirect('login/logOut');
     }
 }

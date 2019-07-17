@@ -30,7 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a class="nav-link" href="<?php echo base_url();?>backend/taxi">Taxi <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo base_url();?>backend/hours">Horarios <span class="sr-only"></span></a>
+                        <a class="nav-link" href="<?php echo base_url();?>backend/user">Usuarios <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<?php echo base_url();?>backend/logout">Cerrar Sesion <span class="sr-only"></span></a>
                     </li>
                 </ul>
 
