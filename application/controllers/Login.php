@@ -26,7 +26,6 @@ class Login extends CI_Controller {
             $this->load->model('User_model');
             $user = $this->User_model->userValidate($userName, $password);
             if ($user) {
-                echo 'userValid';
                 $userData = array(
                     'id'=>$user->iduser,
                     'userName' => $user->user,

@@ -20,16 +20,12 @@ class Daytouse_model extends CI_Model
             $result = SUNDAY;
         }else{
             $url = 'http://nolaborables.com.ar/api/v2/feriados/'.$year.'?incluir=opcional';
-            $opts = array( 'http' => array ('method'=>'GET'));
-            $ctx = stream_context_create($opts);
-            $request = json_decode(file_get_contents($url,false,$ctx),true);
+            $request = json_decode($this->curl($url),true);
             foreach ($request as $item) {
                 if ($item['dia'] == $day && $item['mes'] == $mounth &&
                 ($item['tipo'] == 'inamovible' || $item['tipo']== 'puente' || $item['tipo']=='trasladable')){
                     $result = SUNDAY;
-
                 }
-
             }
         }
         return $result;
@@ -38,6 +34,19 @@ class Daytouse_model extends CI_Model
 
     }
 
-
+    public function curl($url){
+        $headers = array('Content-Type: application/json',);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        $something = $result;
+        if(isset($something)){ return $something ; }
+        else { return FALSE ; }
+    }
 
 }
