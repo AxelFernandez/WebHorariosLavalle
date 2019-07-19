@@ -15,12 +15,12 @@ class Formater_model extends CI_Model
     public function  getheaderTable(){
         $result =  '
             <table class="table table-striped">
-            <h3 align="center">Próximos Arribos</h3>
+            <h3 align="center">Próximas Llegadas</h3>
             <thead>
             <tr>
                 <th scope="col">Ruta</th>
-                <th scope="col">Arriba Desde</th>
-                <th scope="col">Hora de Arribo</th>
+                <th scope="col">Llega Desde</th>
+                <th scope="col">Hora de Llegada</th>
                 <th scope="col">Destino</th>
                 <th scope="col">Hora de llegada</th>
                 <th scope="col">Plataforma</th>

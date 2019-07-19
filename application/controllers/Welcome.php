@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 class Welcome extends CI_Controller {
 
     public function __construct()
@@ -12,7 +13,6 @@ class Welcome extends CI_Controller {
         $this->load->model('R40_model','R40');
         $this->load->model('Daytouse_model','day');
         $this->load->helper('url');
-
     }
     public function index(){
 
@@ -58,9 +58,7 @@ class Welcome extends CI_Controller {
     }
 
     public function getAjax(){
-        echo $result = $this->getNextArrival(). $this->getLastArrival();
-
-
+        echo $result = $this->getNextArrival(). $this->getListtaxi();
     }
     public function getAjaxTaxi(){
         echo $this->getListtaxi();

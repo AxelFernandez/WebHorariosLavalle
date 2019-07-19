@@ -105,6 +105,8 @@ define('VUELTA','vuelta');
 define('NAME','name');
 define('PHONE','phone');
 define('LIMIT', 5);
+define('TIMEZONE', '-5 hours');
+
 /*
  * Places to Search
  *

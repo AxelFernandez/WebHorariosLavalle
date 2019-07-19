@@ -11,7 +11,7 @@ class R40_model extends CI_Model implements Strategy
     static $R40 = 'R40';
     public function getToMendoza($day)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
+        $now = date('H:i:s', strtotime(TIMEZONE));
         $query = $this->db->query('SELECT * FROM ruta40ida'.$day.' where lavalle > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){
@@ -31,7 +31,7 @@ class R40_model extends CI_Model implements Strategy
 
     public function getFromMendoza($day)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
+        $now = date('H:i:s', strtotime(TIMEZONE));
         $query = $this->db->query('SELECT * FROM ruta40vuelta'.$day.' where lavalle > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){
@@ -85,7 +85,7 @@ class R40_model extends CI_Model implements Strategy
     public function getLastArrival($day, $fromTo)
     {
 
-        $now = date('H:i:s', strtotime('-5 hours'));
+        $now = date('H:i:s', strtotime(TIMEZONE));
         $query = $this->db->query('SELECT * FROM ruta40'.$fromTo.$day.' where lavalle < "'.$now.'" ORDER BY lavalle DESC Limit 1');
         $row = $query->row();
         $hour = array();

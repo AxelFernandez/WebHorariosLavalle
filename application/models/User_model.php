@@ -26,7 +26,7 @@ class User_model extends CI_Model
         $crud->display_as('iduser','ID');
         $crud->display_as('user','Nombre');
         $crud->change_field_type('password','password');
-        $crud->set_language("Spanish");
+        $crud->set_language("spanish");
         $crud->unset_clone();
         $crud->unset_export();
         $crud->unset_read();

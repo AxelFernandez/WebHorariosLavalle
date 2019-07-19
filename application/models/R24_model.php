@@ -16,7 +16,7 @@ class R24_model extends CI_Model implements Strategy {
      * */
     public function getToMendoza($day)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
+        $now = date('H:i:s', strtotime(TIMEZONE));
         $query = $this->db->query('SELECT * FROM ruta24ida'.$day.' where lavalle > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){
@@ -35,7 +35,7 @@ class R24_model extends CI_Model implements Strategy {
 
     public function getFromMendoza($day)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
+        $now = date('H:i:s', strtotime(TIMEZONE));
         $query = $this->db->query('SELECT * FROM ruta24vuelta'.$day.' where lavalle > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){

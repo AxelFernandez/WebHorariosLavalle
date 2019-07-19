@@ -28,7 +28,7 @@ class Taxi_model extends CI_Model
         $crud->display_as('idTaxi','ID');
         $crud->display_as('name','Nombre');
         $crud->display_as('phone','Telefono');
-        $crud->set_language("Spanish");
+        $crud->set_language("spanish");
         $crud->unset_clone();
         $crud->unset_export();
         $crud->unset_read();
