@@ -32,29 +32,13 @@ $( document ).ready(function () {
 
 function callhour() {
     var request = $.ajax({
-        url: "http://localhost/index.php/welcome/getajax",
+        url: "http://localhost/index.php/MendozaTerminal/getajax",
         method: "GET",
         dataType: "html"
     });
 
     request.done(function( msg ) {
         document.getElementById("hours").innerHTML = (msg);
-    });
-
-    request.fail(function( jqXHR, textStatus ) {
-        alert( "Request failed: " + textStatus );
-    });
-
-}
-function callTaxi() {
-    var request = $.ajax({
-        url: "http://localhost/index.php/welcome/getajaxTaxi",
-        method: "GET",
-        dataType: "html"
-    });
-
-    request.done(function( msg ) {
-        document.getElementById("taxi").innerHTML = (msg);
     });
 
     request.fail(function( jqXHR, textStatus ) {

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Horarios Lavalle Web</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>js/JsMendozaTerminal.js" ></script>
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbar-static/">
+	<!-- Bootstrap core CSS -->
+	<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body onload="startTime(), callhour()">
+
+<nav class="site-header sticky-top">
+	<div class="navbar navbar-expand-md navbar-dark bg-dark mb-4 justify-content-between">
+		<div style="float: left">
+		</div>
+		<div style="margin-right: 10%" id="clockdate">
+			<h1 class="navbar-brand">Hora Actual:</h1>
+			<h1 style="size: 49px;color: white" ><div id="clock"></div></h1>
+		</div>
+	</div>
+</nav>
+<div style="margin-left: 5%; margin-right: 5%">
+
+	<div class="box" id="taxi"></div>
+	<div class="box" id="hours"></div>
+
+</div>
+</div>
+</body>
+</html>

@@ -105,7 +105,7 @@ define('VUELTA','vuelta');
 define('NAME','name');
 define('PHONE','phone');
 define('LIMIT', 5);
-define('TIMEZONE', '-5 hours');
+define('TIMEZONE', '-3 hours');
 
 /*
  * Places to Search
@@ -131,5 +131,7 @@ define('el15', 'El 15');
 define('gustavoAndre', 'Gustavo Andre');
 define('costaDeAraujo', 'Costa de Araujo');
 define('lavalle', 'Lavalle');
+define('LAVALLE_TABLE', 'lavalle');
+define('MENDOZA_TABLE', 'mendoza');
 define('mendoza', 'Mendoza');
 

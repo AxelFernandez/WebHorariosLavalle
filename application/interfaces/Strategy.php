@@ -8,10 +8,10 @@
 
 interface Strategy
 {
-    public function getToMendoza($day);
-    public function getFromMendoza($day);
+    public function getToMendoza($day,$origin);
+    public function getFromMendoza($day,$origin);
     public function searchDisttrictToMendoza($row);
     public function searchMendozaToDistrict($row);
-    public function getPlataform($routine);
-    public function getLastArrival($day,$fromTo);
+    public function getPlataform($routine,$origin);
+    public function getLastArrival($day,$fromTo,$origin);
 }
