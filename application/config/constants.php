@@ -156,3 +156,5 @@ define ("tables", serialize (array (
 
 
 	)));
+
+define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
