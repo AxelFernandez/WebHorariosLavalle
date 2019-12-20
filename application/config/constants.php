@@ -120,6 +120,16 @@ define ("R40DistToMendoza", serialize (array ("km56", "km47Esc", "jocoli","oscar
 define ("R40MendozaToDist", serialize (array ("mendoza", "borbollon", "pastal","cruce","lavalle", "paramillo", "verjel","salvatierra","barrioLaColmena",
     "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56")));
 
+
+
+define ("CaliforniaDistToCosta", serialize (array ("3portena","central","california","william","costa")));
+define ("CaliforniaCostaToDist", serialize (array ("costa","william","california","central","3portena")));
+
+define ("CaliforniaDistToCostaSunday", serialize (array ("3portena","central","california","costa")));
+define ("CaliforniaCostaToDistSunday", serialize (array ("costa","california","central","3portena")));
+
+
+
 /*
  *  Description for Place
  *
@@ -135,3 +145,17 @@ define('LAVALLE_TABLE', 'lavalle');
 define('MENDOZA_TABLE', 'mendoza');
 define('mendoza', 'Mendoza');
 
+define ("tables", serialize (array (
+
+	"californiaidaweek", "californiaidasaturday", "californiaidasunday",
+	"californiavueltaweek", "californiavueltasaturday", "californiavueltasunday",
+	"ruta24idaweek", "ruta24idasaturday", "ruta24idasunday",
+	"ruta24vueltaweek", "ruta24vueltasaturday", "ruta24vueltasunday",
+	"ruta40idaweek", "ruta40idasaturday", "ruta40idasunday",
+	"ruta40vueltaweek", "ruta40vueltasaturday", "ruta40vueltasunday",
+
+
+	)));
+
+define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
+define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vR9VeXtF7eCgFdEWD5TRND9WbKWOq6NvKhQYjCie3iuxTyrNe5OxBCUJ9oAhPlpjQ/pubhtml');
