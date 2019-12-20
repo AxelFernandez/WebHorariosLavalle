@@ -158,3 +158,4 @@ define ("tables", serialize (array (
 	)));
 
 define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
+define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vR9VeXtF7eCgFdEWD5TRND9WbKWOq6NvKhQYjCie3iuxTyrNe5OxBCUJ9oAhPlpjQ/pubhtml');
