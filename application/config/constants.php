@@ -111,22 +111,38 @@ define('TIMEZONE', '-3 hours');
  * Places to Search
  *
  */
-define ("R24DistToMendoza", serialize (array ("asuncion", "el15", "gustavoAndre","costaDeAraujo","lavalle","mendoza")));
-define ("R24MendozaToDist", serialize (array ("mendoza", "lavalle", "costaDeAraujo","gustavoAndre","el15","asuncion")));
+define ("R24DistToMendoza", serialize (array ("asuncion", "el15", "gustavoAndre","costaDeAraujo","lavalle","mendoza","additional")));
+define ("R24MendozaToDist", serialize (array ("mendoza", "lavalle", "costaDeAraujo","gustavoAndre","el15","asuncion","additional")));
 
 
 define ("R40DistToMendoza", serialize (array ("km56", "km47Esc", "jocoli","oscarMendoza","andacollo","croco","sguazini","3DeMayo","sanFrancisco","calleItalia",
-    "barrioLaColmena","salvatierra","paramillo","lavalle","verjel","cruce","pastal","borbollon","mendoza")));
+    "barrioLaColmena","salvatierra","paramillo","lavalle","verjel","cruce","pastal","borbollon","mendoza","additional")));
 define ("R40MendozaToDist", serialize (array ("mendoza", "borbollon", "pastal","cruce","lavalle", "paramillo", "verjel","salvatierra","barrioLaColmena",
-    "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56")));
+    "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56","additional")));
 
 
 
-define ("CaliforniaDistToCosta", serialize (array ("3portena","central","california","william","costa")));
-define ("CaliforniaCostaToDist", serialize (array ("costa","william","california","central","3portena")));
+define ("CaliforniaDistToCosta", serialize (array ("3portena","central","california","william","costa","additional")));
+define ("CaliforniaCostaToDist", serialize (array ("costa","william","california","central","3portena","additional")));
 
-define ("CaliforniaDistToCostaSunday", serialize (array ("3portena","central","california","costa")));
-define ("CaliforniaCostaToDistSunday", serialize (array ("costa","california","central","3portena")));
+define ("CaliforniaDistToCostaSunday", serialize (array ("3portena","central","california","costa","additional")));
+define ("CaliforniaCostaToDistSunday", serialize (array ("costa","california","central","3portena","additional")));
+
+
+define ("InternoCostaToDist", serialize (array ("lapega","lasvioletas","elvergel","paramillo","california","labajada","mendoza","lavalle","costa","additional")));
+define ("InternoDistToCosta", serialize (array ("costa","lavalle","mendoza","labajada","california","paramillo","elvergel","lasvioletas","lapega","additional")));
+
+define ("InternoCostaToDistSunday", serialize (array ("lasvioletas","lapega", "elvergel","paramillo", "lavalle","costa","additional")));
+define ("InternoDistToCostaSunday", serialize (array ("costa","lavalle","paramillo","elvergel","lapega","lasvioletas","additional")));
+
+
+
+
+define ("InternoVillaToDist", serialize (array ("paramillo","lapega","lasvioletas","elvergel","btupac","blacolmena","lavalle","additional")));
+define ("InternoDistToVilla", serialize (array ("lavalle","blacolmena","btupac","elvergel","lapega","lasvioletas","paramillo","additional")));
+
+define ("InternoVillaToDistSaturday", serialize (array ("paramillo","lapega", "lasvioletas","elvergel", "mendoza","lavalle","additional")));
+define ("InternoDistToVillaSaturday", serialize (array ("lavalle","mendoza","elvergel","lapega","lasvioletas","paramillo","additional")));
 
 
 
@@ -153,7 +169,10 @@ define ("tables", serialize (array (
 	"ruta24vueltaweek", "ruta24vueltasaturday", "ruta24vueltasunday",
 	"ruta40idaweek", "ruta40idasaturday", "ruta40idasunday",
 	"ruta40vueltaweek", "ruta40vueltasaturday", "ruta40vueltasunday",
-
+	"internocostaidaweek", "internocostaidasaturday","internocostaidasunday",
+	"internocostavueltaweek", "internocostavueltasaturday", "internocostavueltasunday",
+	"internolavalleidaweek","internolavalleidasaturday",
+	"internolavallevueltaweek","internolavallevueltasaturday"
 
 	)));
 
