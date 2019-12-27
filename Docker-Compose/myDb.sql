@@ -1,12 +1,12 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 25-12-2019 a las 19:44:28
--- Versión del servidor: 8.0.17
--- Versión de PHP: 7.1.23
-CREATE DATABASE IF NOT EXISTS HorariosLavalle; USE HorariosLavalle;
+-- Servidor: db
+-- Tiempo de generación: 27-12-2019 a las 16:57:56
+-- Versión del servidor: 5.7.28
+-- Versión de PHP: 7.4.1
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -21,16 +21,14 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `HorariosLavalle`
 --
+CREATE DATABASE IF NOT EXISTS `HorariosLavalle` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `HorariosLavalle`;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `californiaidasaturday`
 --
-
-
-
-
 
 CREATE TABLE `californiaidasaturday` (
   `idcaliforniaidaweek` int(11) NOT NULL,
@@ -40,7 +38,7 @@ CREATE TABLE `californiaidasaturday` (
   `california` time DEFAULT NULL,
   `costa` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiaidasaturday`
@@ -71,7 +69,7 @@ CREATE TABLE `californiaidasunday` (
   `california` time DEFAULT NULL,
   `costa` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiaidasunday`
@@ -100,7 +98,7 @@ CREATE TABLE `californiaidaweek` (
   `william` time DEFAULT NULL,
   `costa` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiaidaweek`
@@ -131,7 +129,7 @@ CREATE TABLE `californiavueltasaturday` (
   `central` time DEFAULT NULL,
   `3portena` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiavueltasaturday`
@@ -161,7 +159,7 @@ CREATE TABLE `californiavueltasunday` (
   `central` time DEFAULT NULL,
   `3portena` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiavueltasunday`
@@ -190,7 +188,7 @@ CREATE TABLE `californiavueltaweek` (
   `central` time DEFAULT NULL,
   `3portena` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `californiavueltaweek`
@@ -223,15 +221,15 @@ CREATE TABLE `internocostaidasaturday` (
   `labajada` time DEFAULT NULL,
   `california` time DEFAULT NULL,
   `mendoza` time DEFAULT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostaidasaturday`
 --
 
-INSERT INTO `internocostaidasaturday` (`idinternocostaidasaturday`, `lapega`, `lasvioletas`, `elvergel`, `paramillo`, `lavalle`, `labajada`, `california`, `mendoza`, `costa`, `additional`) VALUES
+INSERT INTO `internocostaidasaturday` (`idinternocostaidasaturday`, `lapega`, `lasvioletas`, `elvergel`, `paramillo`, `lavalle`, `labajada`, `california`, `mendoza`, `costaDeAraujo`, `additional`) VALUES
 (1, NULL, NULL, NULL, NULL, NULL, '05:40:00', NULL, NULL, '05:50:00', NULL),
 (2, NULL, NULL, NULL, NULL, '07:00:00', NULL, NULL, NULL, '07:35:00', 'Por El Carmen'),
 (3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11:00:00', '12:23:00', NULL),
@@ -255,15 +253,15 @@ CREATE TABLE `internocostaidasunday` (
   `elvergel` time DEFAULT NULL,
   `paramillo` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostaidasunday`
 --
 
-INSERT INTO `internocostaidasunday` (`idinternocostaidasunday`, `lasvioletas`, `lapega`, `elvergel`, `paramillo`, `lavalle`, `costa`, `additional`) VALUES
+INSERT INTO `internocostaidasunday` (`idinternocostaidasunday`, `lasvioletas`, `lapega`, `elvergel`, `paramillo`, `lavalle`, `costaDeAraujo`, `additional`) VALUES
 (1, NULL, NULL, NULL, '09:00:00', '09:20:00', NULL, '\r'),
 (2, NULL, '09:50:00', '10:00:00', NULL, '10:10:00', NULL, '\r'),
 (3, NULL, NULL, NULL, NULL, '10:10:00', '10:50:00', 'X PALMERA'),
@@ -287,15 +285,15 @@ CREATE TABLE `internocostaidaweek` (
   `labajada` time DEFAULT NULL,
   `mendoza` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostaidaweek`
 --
 
-INSERT INTO `internocostaidaweek` (`idinternocostaidaweek`, `lapega`, `lasvioletas`, `elvergel`, `paramillo`, `california`, `labajada`, `mendoza`, `lavalle`, `costa`, `additional`) VALUES
+INSERT INTO `internocostaidaweek` (`idinternocostaidaweek`, `lapega`, `lasvioletas`, `elvergel`, `paramillo`, `california`, `labajada`, `mendoza`, `lavalle`, `costaDeAraujo`, `additional`) VALUES
 (1, NULL, NULL, NULL, NULL, NULL, '05:40:00', NULL, NULL, '05:50:00', NULL),
 (2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '07:00:00', '07:30:00', 'Por El Carmen'),
 (3, NULL, NULL, NULL, NULL, NULL, NULL, '10:50:00', '11:50:00', '12:13:00', NULL),
@@ -314,7 +312,7 @@ INSERT INTO `internocostaidaweek` (`idinternocostaidaweek`, `lapega`, `lasviolet
 
 CREATE TABLE `internocostavueltasaturday` (
   `idinternocostavueltasaturday` int(11) NOT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `mendoza` time DEFAULT NULL,
   `california` time DEFAULT NULL,
   `labajada` time DEFAULT NULL,
@@ -324,13 +322,13 @@ CREATE TABLE `internocostavueltasaturday` (
   `lasvioletas` time DEFAULT NULL,
   `lapega` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostavueltasaturday`
 --
 
-INSERT INTO `internocostavueltasaturday` (`idinternocostavueltasaturday`, `costa`, `mendoza`, `california`, `labajada`, `lavalle`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
+INSERT INTO `internocostavueltasaturday` (`idinternocostavueltasaturday`, `costaDeAraujo`, `mendoza`, `california`, `labajada`, `lavalle`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
 (1, '05:30:00', NULL, NULL, '05:40:00', NULL, NULL, NULL, NULL, NULL, 'Por Calle Roca'),
 (2, '06:00:00', NULL, NULL, NULL, '06:35:00', NULL, NULL, NULL, NULL, 'Por la Merced'),
 (3, '08:07:00', '09:30:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
@@ -350,7 +348,7 @@ INSERT INTO `internocostavueltasaturday` (`idinternocostavueltasaturday`, `costa
 
 CREATE TABLE `internocostavueltasunday` (
   `idinternocostavueltasunday` int(11) NOT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `labajada` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
   `paramillo` time DEFAULT NULL,
@@ -358,13 +356,13 @@ CREATE TABLE `internocostavueltasunday` (
   `lasvioletas` time DEFAULT NULL,
   `lapega` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostavueltasunday`
 --
 
-INSERT INTO `internocostavueltasunday` (`idinternocostavueltasunday`, `costa`, `labajada`, `lavalle`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
+INSERT INTO `internocostavueltasunday` (`idinternocostavueltasunday`, `costaDeAraujo`, `labajada`, `lavalle`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
 (1, '08:00:00', NULL, '08:40:00', NULL, NULL, NULL, NULL, 'Por La Palmera'),
 (2, NULL, NULL, '08:40:00', '09:00:00', NULL, NULL, NULL, '\r'),
 (3, NULL, NULL, '09:20:00', NULL, '09:30:00', '09:40:00', '09:50:00', NULL),
@@ -381,7 +379,7 @@ INSERT INTO `internocostavueltasunday` (`idinternocostavueltasunday`, `costa`, `
 
 CREATE TABLE `internocostavueltaweek` (
   `idinternocostavueltaweek` int(11) NOT NULL,
-  `costa` time DEFAULT NULL,
+  `costaDeAraujo` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
   `mendoza` time DEFAULT NULL,
   `labajada` time DEFAULT NULL,
@@ -391,13 +389,13 @@ CREATE TABLE `internocostavueltaweek` (
   `lasvioletas` time DEFAULT NULL,
   `lapega` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internocostavueltaweek`
 --
 
-INSERT INTO `internocostavueltaweek` (`idinternocostavueltaweek`, `costa`, `lavalle`, `mendoza`, `labajada`, `california`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
+INSERT INTO `internocostavueltaweek` (`idinternocostavueltaweek`, `costaDeAraujo`, `lavalle`, `mendoza`, `labajada`, `california`, `paramillo`, `elvergel`, `lasvioletas`, `lapega`, `additional`) VALUES
 (1, '05:30:00', NULL, NULL, '05:40:00', NULL, NULL, NULL, NULL, NULL, NULL),
 (2, '06:00:00', '06:40:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Por La Palmera'),
 (3, '07:57:00', '08:20:00', '09:20:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -424,7 +422,7 @@ CREATE TABLE `internolavalleidasaturday` (
   `mendoza` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internolavalleidasaturday`
@@ -451,7 +449,7 @@ CREATE TABLE `internolavalleidasunday` (
   `mendoza` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -469,7 +467,7 @@ CREATE TABLE `internolavalleidaweek` (
   `blacolmena` time DEFAULT NULL,
   `lavalle` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internolavalleidaweek`
@@ -500,7 +498,7 @@ CREATE TABLE `internolavallevueltasaturday` (
   `lapega` time DEFAULT NULL,
   `paramillo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internolavallevueltasaturday`
@@ -527,7 +525,7 @@ CREATE TABLE `internolavallevueltasunday` (
   `lapega` time DEFAULT NULL,
   `paramillo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -545,7 +543,7 @@ CREATE TABLE `internolavallevueltaweek` (
   `lapega` time DEFAULT NULL,
   `paramillo` time DEFAULT NULL,
   `additional` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `internolavallevueltaweek`
@@ -1540,13 +1538,13 @@ ALTER TABLE `californiaidasaturday`
 -- AUTO_INCREMENT de la tabla `californiaidasunday`
 --
 ALTER TABLE `californiaidasunday`
-  MODIFY `idcaliforniaidaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idcaliforniaidaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `californiaidaweek`
 --
 ALTER TABLE `californiaidaweek`
-  MODIFY `idcaliforniaidaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idcaliforniaidaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `californiavueltasaturday`
@@ -1558,13 +1556,13 @@ ALTER TABLE `californiavueltasaturday`
 -- AUTO_INCREMENT de la tabla `californiavueltasunday`
 --
 ALTER TABLE `californiavueltasunday`
-  MODIFY `idcaliforniavueltasaturday` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idcaliforniavueltasaturday` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `californiavueltaweek`
 --
 ALTER TABLE `californiavueltaweek`
-  MODIFY `idcaliforniavueltaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idcaliforniavueltaweek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `internocostaidasaturday`

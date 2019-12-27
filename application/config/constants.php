@@ -129,11 +129,11 @@ define ("CaliforniaDistToCostaSunday", serialize (array ("3portena","central","c
 define ("CaliforniaCostaToDistSunday", serialize (array ("costa","california","central","3portena","additional")));
 
 
-define ("InternoCostaToDist", serialize (array ("lapega","lasvioletas","elvergel","paramillo","california","labajada","mendoza","lavalle","costa","additional")));
-define ("InternoDistToCosta", serialize (array ("costa","lavalle","mendoza","labajada","california","paramillo","elvergel","lasvioletas","lapega","additional")));
+define ("InternoCostaToDist", serialize (array ("lapega","lasvioletas","elvergel","paramillo","california","labajada","mendoza","lavalle","costaDeAraujo","additional")));
+define ("InternoDistToCosta", serialize (array ("costaDeAraujo","lavalle","mendoza","labajada","california","paramillo","elvergel","lasvioletas","lapega","additional")));
 
-define ("InternoCostaToDistSunday", serialize (array ("lasvioletas","lapega", "elvergel","paramillo", "lavalle","costa","additional")));
-define ("InternoDistToCostaSunday", serialize (array ("costa","lavalle","paramillo","elvergel","lapega","lasvioletas","additional")));
+define ("InternoCostaToDistSunday", serialize (array ("lasvioletas","lapega", "elvergel","paramillo", "lavalle","costaDeAraujo","additional")));
+define ("InternoDistToCostaSunday", serialize (array ("costaDeAraujo","lavalle","paramillo","elvergel","lapega","lasvioletas","additional")));
 
 
 
