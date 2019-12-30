@@ -27,7 +27,7 @@ class Api extends CI_Controller
 
 	public function current(){
 		echo("<meta content='user-scalable=no, initial-scale=1, width=device-width' id='viewport' name='viewport'>");
-		echo ("<title>Horarios de Invierno 2019</title>");
+		echo ("<title>Horarios de Verano 2020</title>");
 		echo ('<iframe src='.CURRENT_HOUR_URL.' style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"/>');
 
 
