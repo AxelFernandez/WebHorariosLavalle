@@ -15,12 +15,12 @@ class Formater_model extends CI_Model
     public function  getheaderTable(){
         $result =  '
             <table class="table table-striped">
-            <h3 align="center">Próximos Arribos</h3>
+            <h3 align="center">Próximas Llegadas</h3>
             <thead>
             <tr>
                 <th scope="col">Ruta</th>
-                <th scope="col">Arriba Desde</th>
-                <th scope="col">Hora de Arribo</th>
+                <th scope="col">Llega Desde</th>
+                <th scope="col">Hora de Llegada</th>
                 <th scope="col">Destino</th>
                 <th scope="col">Hora de llegada</th>
                 <th scope="col">Plataforma</th>
@@ -49,8 +49,73 @@ class Formater_model extends CI_Model
 
     }
 
+	public function  getheaderTableMendozaTerminal(){
+		$result =  '
+            <table class="table table-striped">
+            <h3 align="center">Próximas Salidas</h3>
+            <thead>
+            <tr>
+                <th scope="col">Ruta</th>
+                <th scope="col">Plataforma</th>
+                <th scope="col">Hora de Salida</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Hora de llegada</th>
+            </tr>
+            </thead>';
+		return $result;
 
-    public function getLastArrivalHeader(){
+	}
+
+	public function formaterRowMendozaTerminal($hour){
+		$result = null;
+
+		$rowcolor = self::$rowcolorblue;
+		$result .= '<tbody>
+        <tr class='.$rowcolor.'>
+            <th scope="row">'.$hour[ROUTE].'</th>
+            <th scope="row">'.$hour[PLATFORM].'</th>
+            <td>'.$hour[ARRIVAL_HOUR].'</td>
+            <td>'.$hour[TO].'</td>
+            <td>'.$hour[FINISH_HOUR].'</td>
+        </tr>';
+
+
+		return $result;
+
+	}
+
+	public function getLastArrivalHeaderTerminalMendoza(){
+		$result =  '
+            <table class="table table-striped">
+            <h3 align="center">Ultimas Salidas</h3>
+            <thead>
+            <tr>
+                <th scope="col">Ruta</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Hora de Salida</th>
+            </tr>
+            </thead>';
+		return $result;
+	}
+
+	public function formaterRowLastArrivalTerminalMendoza($hour){
+		$result = null;
+
+		$rowcolor = self::$rowcolorRed;
+		$result .= '<tbody>
+        <tr class='.$rowcolor.'>
+            <th scope="row">'.$hour[ROUTE].'</th>
+            <td>'.$hour[TO].'</td>
+            <td>'.$hour[ARRIVAL_HOUR].'</td>
+        </tr>';
+
+
+		return $result;
+
+	}
+
+
+	public function getLastArrivalHeader(){
         $result =  '
             <table class="table table-striped">
             <h3 align="center">Ultimas Salidas</h3>

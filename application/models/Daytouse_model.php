@@ -10,10 +10,10 @@ class Daytouse_model extends CI_Model
 {
     public function checkIsNoLaborableDay(){
         $result = WEEK;
-        $year = date('Y', strtotime('-5 hours'));
-        $mounth = date('n', strtotime('-5 hours'));
-        $day = date('j', strtotime('-5 hours'));
-        $dayofWeek =  date('N', strtotime('-5 hours'));
+        $year = date('Y', strtotime(TIMEZONE));
+        $mounth = date('n', strtotime(TIMEZONE));
+        $day = date('j', strtotime(TIMEZONE));
+        $dayofWeek =  date('N', strtotime(TIMEZONE));
         if ($dayofWeek == 6){
             $result = SATURDAY;
         }elseif ($dayofWeek == 7){

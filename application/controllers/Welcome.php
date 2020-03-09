@@ -13,7 +13,6 @@ class Welcome extends CI_Controller {
         $this->load->model('R40_model','R40');
         $this->load->model('Daytouse_model','day');
         $this->load->helper('url');
-
     }
     public function index(){
 
@@ -23,10 +22,10 @@ class Welcome extends CI_Controller {
 	public function getNextArrival(){
         $day = $this->day->checkIsNoLaborableDay();
         $result = null;
-        $R24toMendoza = $this->R24->getToMendoza($day);
-        $R24fromMendoza = $this->R24->getfromMendoza($day);
-        $R40toMendoza = $this->R40->getToMendoza($day);
-        $R40fromMendoza = $this->R40->getfromMendoza($day);
+        $R24toMendoza = $this->R24->getToMendoza($day,LAVALLE_TABLE);
+        $R24fromMendoza = $this->R24->getfromMendoza($day,LAVALLE_TABLE);
+        $R40toMendoza = $this->R40->getToMendoza($day,LAVALLE_TABLE);
+        $R40fromMendoza = $this->R40->getfromMendoza($day,LAVALLE_TABLE);
         $all = array_merge($R24toMendoza,$R24fromMendoza,$R40toMendoza,$R40fromMendoza);
 
         usort($all, function($a, $b) {
@@ -44,10 +43,10 @@ class Welcome extends CI_Controller {
 
     public function getLastArrival(){
         $day = $this->day->checkIsNoLaborableDay();
-        $all[] = $this->R24->getLastArrival($day,IDA);
-        $all[] = $this->R24->getLastArrival($day,VUELTA);
-        $all[] = $this->R40->getLastArrival($day,IDA);
-        $all[] = $this->R40->getLastArrival($day,VUELTA);
+        $all[] = $this->R24->getLastArrival($day,IDA,LAVALLE_TABLE);
+        $all[] = $this->R24->getLastArrival($day,VUELTA,LAVALLE_TABLE);
+        $all[] = $this->R40->getLastArrival($day,IDA,LAVALLE_TABLE);
+        $all[] = $this->R40->getLastArrival($day,VUELTA,LAVALLE_TABLE);
         usort($all, function($a, $b) {
             return (strtotime($a[ARRIVAL_HOUR]) < strtotime($b[ARRIVAL_HOUR]));
         });
@@ -59,9 +58,7 @@ class Welcome extends CI_Controller {
     }
 
     public function getAjax(){
-        echo $result = $this->getNextArrival(). $this->getLastArrival();
-
-
+        echo $result = $this->getNextArrival(). $this->getListtaxi();
     }
     public function getAjaxTaxi(){
         echo $this->getListtaxi();

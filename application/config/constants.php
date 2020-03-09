@@ -105,7 +105,7 @@ define('VUELTA','vuelta');
 define('NAME','name');
 define('PHONE','phone');
 define('LIMIT', 5);
-define('TIMEZONE', '-3 hours');
+define('TIMEZONE', '+2 hours');
 
 /*
  * Places to Search
@@ -177,4 +177,4 @@ define ("tables", serialize (array (
 	)));
 
 define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
-define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vQkU_EYWURVFnpjBquLP3Yx_2kENiw4gnvhFdx9-QJq5SZO9-IxvJodvvQjIkQSnQ/pubhtml');
+define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRc9oEPFok0shA2CFf9RUk171HBTYfr6itpGSZXLNPYGRie7szjtinWN9iNTgh11ZzSRlIbT6V6eAvA/pubhtml');

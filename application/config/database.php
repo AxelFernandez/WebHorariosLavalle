@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
+	'hostname' => 'db:3306',
 	'username' => 'root',
-	'password' => 'password',
+	'password' => 'test',
 	'database' => 'HorariosLavalle',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

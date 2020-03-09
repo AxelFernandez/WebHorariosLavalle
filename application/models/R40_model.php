@@ -9,41 +9,43 @@
 class R40_model extends CI_Model implements Strategy
 {
     static $R40 = 'R40';
-    public function getToMendoza($day)
+    public function getToMendoza($day,$origin)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
-        $query = $this->db->query('SELECT * FROM ruta40ida'.$day.' where lavalle > "'.$now.'"');
+        $now = date('H:i:s', strtotime(TIMEZONE));
+        $query = $this->db->query('SELECT * FROM ruta40ida'.$day.' where '.$origin .' > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){
             $hour = array();
-            $origin = $this->searchDisttrictToMendoza($row); //we must know where is the origin point
+            $originS = $this->searchDisttrictToMendoza($row); //we must know where is the origin point
             $destiny = $this->searchMendozaToDistrict($row);//we must know where the bus stop
+			$x = $destiny[ROW_NAME];
             $hour[ROUTE] = self::$R40;
-            $hour[FROM] = $origin[DESCRIPTION];
+            $hour[FROM] = $originS[DESCRIPTION];
             $hour[TO] = $destiny[DESCRIPTION];
-            $hour[ARRIVAL_HOUR] = $row->lavalle;
-            $hour[FINISH_HOUR] = $row->$destiny[ROW_NAME];
-            $hour[PLATFORM] = self::getPlataform(IDA);
+            $hour[ARRIVAL_HOUR] = $row->$origin;
+            $hour[FINISH_HOUR] = $row->$x;
+            $hour[PLATFORM] = self::getPlataform(IDA,$origin);
             $result[] = $hour;
         }
         return $result;
     }
 
-    public function getFromMendoza($day)
+    public function getFromMendoza($day,$origin)
     {
-        $now = date('H:i:s', strtotime('-5 hours'));
-        $query = $this->db->query('SELECT * FROM ruta40vuelta'.$day.' where lavalle > "'.$now.'"');
+        $now = date('H:i:s', strtotime(TIMEZONE));
+        $query = $this->db->query('SELECT * FROM ruta40vuelta'.$day.' where '.$origin.' > "'.$now.'"');
         $result = array();
         foreach ($query->result() as $row){
             $hour = array();
-            $origin = $this->searchMendozaToDistrict($row); //we must know where is the origin point
+            $originS = $this->searchMendozaToDistrict($row); //we must know where is the origin point
             $destiny = $this->searchDisttrictToMendoza($row);//we must know where the bus stop
-            $hour[ROUTE] = self::$R40;
-            $hour[FROM] = $origin[DESCRIPTION];
+			$x = $destiny[ROW_NAME];
+			$hour[ROUTE] = self::$R40;
+            $hour[FROM] = $originS[DESCRIPTION];
             $hour[TO] = $destiny[DESCRIPTION];
-            $hour[ARRIVAL_HOUR] = $row->lavalle;
-            $hour[FINISH_HOUR] = $row->$destiny[ROW_NAME];
-            $hour[PLATFORM] = self::getPlataform(VUELTA);
+            $hour[ARRIVAL_HOUR] = $row->$origin;
+            $hour[FINISH_HOUR] = $row->$x;
+            $hour[PLATFORM] = self::getPlataform(VUELTA,$origin);
             $result[] = $hour;
         }
         return $result;
@@ -62,10 +64,17 @@ class R40_model extends CI_Model implements Strategy
         return $result;
     }
 
-    public function getPlataform($routine)
+    public function getPlataform($routine,$origin)
     {
-        return $routine == IDA ? "Plataforma 3" : "Plataforma 4";
-    }
+		$result = null;
+		if ($origin == MENDOZA_TABLE){
+			$result = "Plataforma 52";
+
+		}else{
+			$result = $routine == IDA ? "Plataforma 3" : "Plataforma 2";
+
+		}
+		return $result;    }
 
     public function searchMendozaToDistrict($row)
     {
@@ -82,24 +91,24 @@ class R40_model extends CI_Model implements Strategy
         return $result;
     }
 
-    public function getLastArrival($day, $fromTo)
+    public function getLastArrival($day, $fromTo,$origin)
     {
 
-        $now = date('H:i:s', strtotime('-5 hours'));
-        $query = $this->db->query('SELECT * FROM ruta40'.$fromTo.$day.' where lavalle < "'.$now.'" ORDER BY lavalle DESC Limit 1');
+        $now = date('H:i:s', strtotime(TIMEZONE));
+        $query = $this->db->query('SELECT * FROM ruta40'.$fromTo.$day.' where '.$origin.' < "'.$now.'" ORDER BY '.$origin.' DESC Limit 1');
         $row = $query->row();
         $hour = array();
         if ($fromTo == IDA){
-            $origin = $this->searchDisttrictToMendoza($row);
+            $originS = $this->searchDisttrictToMendoza($row);
             $destiny = $this->searchMendozaToDistrict($row);
         }elseif($fromTo == VUELTA){
-            $origin = $this->searchMendozaToDistrict($row);
+            $originS = $this->searchMendozaToDistrict($row);
             $destiny = $this->searchDisttrictToMendoza($row);
         }
         $hour[ROUTE] = self::$R40;
-        $hour[FROM] = $origin[DESCRIPTION];
+        $hour[FROM] = $originS[DESCRIPTION];
         $hour[TO] = $destiny[DESCRIPTION];
-        $hour[ARRIVAL_HOUR] = $row->lavalle;
+        $hour[ARRIVAL_HOUR] = $row->$origin;
         return $hour;
 
     }
