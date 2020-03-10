@@ -105,20 +105,46 @@ define('VUELTA','vuelta');
 define('NAME','name');
 define('PHONE','phone');
 define('LIMIT', 5);
-define('TIMEZONE', '-3 hours');
+define('TIMEZONE', '+2 hours');
 
 /*
  * Places to Search
  *
  */
-define ("R24DistToMendoza", serialize (array ("asuncion", "el15", "gustavoAndre","costaDeAraujo","lavalle","mendoza")));
-define ("R24MendozaToDist", serialize (array ("mendoza", "lavalle", "costaDeAraujo","gustavoAndre","el15","asuncion")));
+define ("R24DistToMendoza", serialize (array ("asuncion", "el15", "gustavoAndre","costaDeAraujo","lavalle","mendoza","additional")));
+define ("R24MendozaToDist", serialize (array ("mendoza", "lavalle", "costaDeAraujo","gustavoAndre","el15","asuncion","additional")));
 
 
 define ("R40DistToMendoza", serialize (array ("km56", "km47Esc", "jocoli","oscarMendoza","andacollo","croco","sguazini","3DeMayo","sanFrancisco","calleItalia",
-    "barrioLaColmena","salvatierra","paramillo","lavalle","verjel","cruce","pastal","borbollon","mendoza")));
+    "barrioLaColmena","salvatierra","paramillo","lavalle","verjel","cruce","pastal","borbollon","mendoza","additional")));
 define ("R40MendozaToDist", serialize (array ("mendoza", "borbollon", "pastal","cruce","lavalle", "paramillo", "verjel","salvatierra","barrioLaColmena",
-    "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56")));
+    "calleItalia", "sanFrancisco","3DeMayo","sguazini","croco","andacollo","oscarMendoza","jocoli","km47Esc","km56","additional")));
+
+
+
+define ("CaliforniaDistToCosta", serialize (array ("3portena","central","california","william","costa","additional")));
+define ("CaliforniaCostaToDist", serialize (array ("costa","william","california","central","3portena","additional")));
+
+define ("CaliforniaDistToCostaSunday", serialize (array ("3portena","central","california","costa","additional")));
+define ("CaliforniaCostaToDistSunday", serialize (array ("costa","california","central","3portena","additional")));
+
+
+define ("InternoCostaToDist", serialize (array ("lapega","lasvioletas","elvergel","paramillo","california","labajada","mendoza","lavalle","costaDeAraujo","additional")));
+define ("InternoDistToCosta", serialize (array ("costaDeAraujo","lavalle","mendoza","labajada","california","paramillo","elvergel","lasvioletas","lapega","additional")));
+
+define ("InternoCostaToDistSunday", serialize (array ("lasvioletas","lapega", "elvergel","paramillo", "lavalle","costaDeAraujo","additional")));
+define ("InternoDistToCostaSunday", serialize (array ("costaDeAraujo","lavalle","paramillo","elvergel","lapega","lasvioletas","additional")));
+
+
+
+
+define ("InternoVillaToDist", serialize (array ("paramillo","lapega","lasvioletas","elvergel","btupac","blacolmena","lavalle","additional")));
+define ("InternoDistToVilla", serialize (array ("lavalle","blacolmena","btupac","elvergel","lapega","lasvioletas","paramillo","additional")));
+
+define ("InternoVillaToDistSaturday", serialize (array ("paramillo","lapega", "lasvioletas","elvergel", "mendoza","lavalle","additional")));
+define ("InternoDistToVillaSaturday", serialize (array ("lavalle","mendoza","elvergel","lapega","lasvioletas","paramillo","additional")));
+
+
 
 /*
  *  Description for Place
@@ -135,3 +161,20 @@ define('LAVALLE_TABLE', 'lavalle');
 define('MENDOZA_TABLE', 'mendoza');
 define('mendoza', 'Mendoza');
 
+define ("tables", serialize (array (
+
+	"californiaidaweek", "californiaidasaturday", "californiaidasunday",
+	"californiavueltaweek", "californiavueltasaturday", "californiavueltasunday",
+	"ruta24idaweek", "ruta24idasaturday", "ruta24idasunday",
+	"ruta24vueltaweek", "ruta24vueltasaturday", "ruta24vueltasunday",
+	"ruta40idaweek", "ruta40idasaturday", "ruta40idasunday",
+	"ruta40vueltaweek", "ruta40vueltasaturday", "ruta40vueltasunday",
+	"internocostaidaweek", "internocostaidasaturday","internocostaidasunday",
+	"internocostavueltaweek", "internocostavueltasaturday", "internocostavueltasunday",
+	"internolavalleidaweek","internolavalleidasaturday",
+	"internolavallevueltaweek","internolavallevueltasaturday"
+
+	)));
+
+define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
+define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRc9oEPFok0shA2CFf9RUk171HBTYfr6itpGSZXLNPYGRie7szjtinWN9iNTgh11ZzSRlIbT6V6eAvA/pubhtml');
