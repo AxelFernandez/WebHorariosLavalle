@@ -8,7 +8,6 @@ class Api_model extends CI_Model
 		echo json_encode($this->get());
 	}
 
-
 	private function get(){
 		$tables = unserialize(tables);
 		foreach ($tables as $table) {
@@ -16,16 +15,16 @@ class Api_model extends CI_Model
 			$dist = $this->getDestiny($table);
 			$allItems=null;
 			foreach ($dist as $item){
-
 				$query = $this->db->query('SELECT '.$item.' FROM '. $table );
 				$currentItem = null;
 				foreach ($query->result() as $row) {
 					$currentItem[] = $row->$item;
 				}
-				$allItems[] = array($item => $currentItem);
+				$allItems[$item] = $currentItem;
 			}
-			$result[]= array($table => $allItems);
+			$result[$table] = $allItems;
 		}
+
 		return $result;
 	}
 
@@ -39,16 +38,32 @@ class Api_model extends CI_Model
 			$result = unserialize (R40DistToMendoza);
 		}elseif(strstr($tableName,'ruta40vuelta')){
 			$result = unserialize (R40MendozaToDist);
-		}elseif($tableName == 'califoniaidaweek' || $tableName == 'californiaidasaturday'){
+		}elseif($tableName == 'californiaidaweek' || $tableName == 'californiaidasaturday'){
 			$result = unserialize(CaliforniaDistToCosta);
-		}elseif ($tableName = 'califoniaidasunday'){
+		}elseif ($tableName == 'californiaidasunday'){
 			$result = unserialize(CaliforniaDistToCostaSunday);
-		}elseif($tableName == 'califoniavueltaweek' || $tableName == 'californiavueltasaturday') {
+		}elseif($tableName == 'californiavueltaweek' || $tableName == 'californiavueltasaturday') {
 			$result = unserialize(CaliforniaCostaToDist);
-
-		}elseif ($tableName = 'califoniavueltasunday'){
+		}elseif ($tableName == 'californiavueltasunday'){
 			$result = unserialize(CaliforniaCostaToDistSunday);
+		}elseif ($tableName =='internocostaidaweek' || $tableName == 'internocostaidasaturday'){
+			$result = unserialize(InternoCostaToDist);
+		}elseif ($tableName == 'internocostavueltaweek'|| $tableName == 'internocostavueltasaturday'){
+			$result = unserialize(InternoDistToCosta);
+		}elseif ($tableName == 'internocostaidasunday'){
+			$result = unserialize(InternoCostaToDistSunday);
+		}elseif ($tableName == 'internocostavueltasunday'){
+			$result = unserialize(InternoDistToCostaSunday);
+		}elseif ($tableName == 'internolavalleidaweek'){
+			$result =unserialize(InternoVillaToDist);
+		}elseif($tableName == 'internolavallevueltaweek'){
+			$result = unserialize(InternoDistToVilla);
+		}elseif ($tableName == 'internolavalleidasaturday'){
+			$result = unserialize(InternoVillaToDistSaturday);
+		}elseif ($tableName == 'internolavallevueltasaturday'){
+			$result = unserialize(InternoDistToVillaSaturday);
 		}
+
 
 		return $result;
 	}
