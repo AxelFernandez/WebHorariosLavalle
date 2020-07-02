@@ -176,5 +176,5 @@ define ("tables", serialize (array (
 
 	)));
 
-define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRWGGDCSy-gqZSTpanBG_6NOhV043Atz71w5jqu5UO_o0a6sM0TCfKvYZFx_-CTbf2B-5i3UpiWCe4D/pubhtml#');
+define('SPECIAL_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vTSuHhkhHiZFNuBdAU3OmiDBnjhJz3y6dZZovTkVA186COcbhSL-XnkDKxuhzNNceS9alBrOHbEzBWn/pubhtml');
 define('CURRENT_HOUR_URL','https://docs.google.com/spreadsheets/d/e/2PACX-1vRc9oEPFok0shA2CFf9RUk171HBTYfr6itpGSZXLNPYGRie7szjtinWN9iNTgh11ZzSRlIbT6V6eAvA/pubhtml');
