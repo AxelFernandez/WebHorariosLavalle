@@ -14,7 +14,7 @@ class Api extends CI_Controller
 	}
 
 	public function index(){
-		echo json_encode(array('version' => 16,'special'=>false));
+		echo json_encode(array('version' => 21,'special'=>true));
 
 	}
 
