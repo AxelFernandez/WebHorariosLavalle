@@ -1,21 +1,21 @@
-Create a directory with the following structure:
-├── docker-compose.yml
-├── Dockerfile
-├── dump
-│   └── myDb.sql
-└── www
-    └── All Project!
+# Horarios Lavalle Web
+
+## All compatible with Docker
 
 Run With Docker-compose
 
 If it dosn't run try:
 
-1 - docker-compose down
-2 - Deleted old volumes (if there is no significant data) docker system prune --force --volumes
-3 - Ran it with docker-compose up -d to set it up in background.
+```
+docker-compose down
+Deleted old volumes (if there is no significant data) docker system prune --force --volumes
+Ran it with docker-compose up -d to set it up in background.
+```
 
 In Database configuration, database.php use this:
 
+
+```
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'db:3306',   <----this is the linked name in docker-compose.yaml
@@ -37,3 +37,5 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+```
+
