@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     </head>
     <body >
-        <nav class="site-header sticky-top py-1">
+        <nav>
             <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4 justify-content-between">
                 <div style="float: left">
                     <img style="margin-left: 30%; margin-top: 5%" width="100" height="80" src="<?php echo base_url();?>Img/Logo.jpg">

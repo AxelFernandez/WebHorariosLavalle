@@ -16,6 +16,7 @@ class Taxi_model extends CI_Model
             $taxi = array();
             $taxi[NAME] = $item->name;
             $taxi[PHONE] = $item->phone;
+            $taxi[DOMAIN] = $item->domain;
             $result[] = $taxi;
         }
     return $result;
@@ -28,12 +29,13 @@ class Taxi_model extends CI_Model
         $crud->display_as('idTaxi','ID');
         $crud->display_as('name','Nombre');
         $crud->display_as('phone','Telefono');
+        $crud->display_as('domain','Patente');
         $crud->set_language("spanish");
         $crud->unset_clone();
         $crud->unset_export();
         $crud->unset_read();
         $crud->unset_print();
-        $crud->columns('idTaxi','name','phone');
+        $crud->columns('idTaxi','name','domain','phone');
 
         $output = $crud->render();
 

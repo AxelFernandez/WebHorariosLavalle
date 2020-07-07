@@ -103,6 +103,7 @@ define('DESCRIPTION', 'desc');
 define('IDA','ida');
 define('VUELTA','vuelta');
 define('NAME','name');
+define('DOMAIN','domain');
 define('PHONE','phone');
 define('LIMIT', 5);
 define('TIMEZONE', '+2 hours');

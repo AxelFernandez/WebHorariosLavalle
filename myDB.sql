@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 01-07-2020 a las 16:07:34
+-- Tiempo de generación: 07-07-2020 a las 14:11:54
 -- Versión del servidor: 5.7.30
 -- Versión de PHP: 7.3.6
 
@@ -1055,6 +1055,7 @@ INSERT INTO `ruta40vueltaweek` (`idruta40vueltaweek`, `mendoza`, `borbollon`, `p
 CREATE TABLE `taxi` (
   `idTaxi` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
+  `domain` varchar(45) DEFAULT NULL,
   `phone` int(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -1062,11 +1063,11 @@ CREATE TABLE `taxi` (
 -- Volcado de datos para la tabla `taxi`
 --
 
-INSERT INTO `taxi` (`idTaxi`, `name`, `phone`) VALUES
-(3, 'Luis Gonzales', 2147483647),
-(4, 'Axel', 226165462),
-(5, 'Gustavo', 123456),
-(8, 'David', 26145678);
+INSERT INTO `taxi` (`idTaxi`, `name`, `domain`, `phone`) VALUES
+(3, 'Taxi 1', 'HDF456', 2147483647),
+(4, 'Axel', 'GHT456', 226165462),
+(5, 'Taxi 3', 'DFS', 123456),
+(8, 'Taxi 2', 'CPO345', 26145678);
 
 -- --------------------------------------------------------
 
