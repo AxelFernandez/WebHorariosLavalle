@@ -104,9 +104,10 @@ define('IDA','ida');
 define('VUELTA','vuelta');
 define('NAME','name');
 define('DOMAIN','domain');
+define('TAXINUMBER','taxiNumber');
 define('PHONE','phone');
 define('LIMIT', 5);
-define('TIMEZONE', '+2 hours');
+define('TIMEZONE', '-3 hours');
 
 /*
  * Places to Search

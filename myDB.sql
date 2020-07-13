@@ -1055,19 +1055,10 @@ INSERT INTO `ruta40vueltaweek` (`idruta40vueltaweek`, `mendoza`, `borbollon`, `p
 CREATE TABLE `taxi` (
   `idTaxi` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
+  `taxiNumber` varchar(45) DEFAULT NULL,
   `domain` varchar(45) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL
+  `phone` varchar(45) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `taxi`
---
-
-INSERT INTO `taxi` (`idTaxi`, `name`, `domain`, `phone`) VALUES
-(3, 'Taxi 1', 'HDF456', 2147483647),
-(4, 'Axel', 'GHT456', 226165462),
-(5, 'Taxi 3', 'DFS', 123456),
-(8, 'Taxi 2', 'CPO345', 26145678);
 
 -- --------------------------------------------------------
 

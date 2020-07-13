@@ -154,6 +154,7 @@ class Formater_model extends CI_Model
             <thead>
             <tr>
                 <th scope="col">Nombre</th>
+                <th scope="col">Número de Taxi</th>
                 <th scope="col">Patente</th>
                 <th scope="col">Telefono</th>
             </tr>
@@ -168,6 +169,7 @@ class Formater_model extends CI_Model
         $result .= '<tbody>
         <tr class='.$rowcolor.'>
             <td>'.$taxi[NAME].'</td>
+            <td>'.$taxi[TAXINUMBER].'</td>
             <td>'.$taxi[DOMAIN].'</td>
             <td>'.$taxi[PHONE].'</td>
         </tr>';
